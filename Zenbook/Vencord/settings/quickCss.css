@@ -1,0 +1,182 @@
+@import url("https://raw.githubusercontent.com/BurningStoneDiscord/DiscordHighlightGradient/refs/heads/main/MentionReplyingFancyGradient.css");
+@import url(https://teeenoob.github.io/themes/vencord/SpotifyEmbed.css);
+
+
+#vc-spotify-player {
+    background-color: var(--background-gradient-highest, var(--background-base-low)) !important;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 12px;
+}
+
+section[class^="panels_"] {
+    background: var(--background-gradient-high, var(--background-base-lowest));
+    border: 0px;
+    border-left: 0px;
+}
+
+section[class^="panels_"] div[class^="container__"] {
+    background-color: var(--background-gradient-highest, var(--background-base-low));
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+}
+
+section[class^="panels_"] div[class^="panel_"] {
+    margin-bottom: 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+}
+
+header[class^="header_"] {
+    border-bottom: 0px;
+}
+
+section[class^="panels_"] div[class^="listeningAlong_"] {
+    border: 1px solid var(--border-subtle) !important;
+    margin-bottom: 12px;
+    border-radius: 20px;
+}
+
+/*   */
+
+[class^="headerText"] {
+  display: inline-flex;
+}
+
+[class^="headerText"] > span:has([class^="roleIcon"]) {
+  order: 2;
+}
+
+[class^="headerText"] > span:has([class^="chipletContainerInner"])  {
+  order: 3;
+}
+
+[class^="headerText"] > span:is([class^="username"]) {
+  order: 1;
+}
+
+[class^="headerText"] > span[style="display: none;"] {
+  order: 4;
+}
+
+[class^="headerText"] > .vc-message-decorations-wrapper {
+  order: 5;
+}
+
+[class^="headerText"] > span:has(> [class^="newMemberBadge"]) {
+  order: 6;
+}
+
+[class^="headerText"] > span:is([class^="botTag"]) {
+  order: 7;
+}
+
+[class*=clanTag]>span>span {
+  max-width: 4em;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+#vc-spotify-player {
+    --blur-amount: 4px; 
+    --normal-bg-colour: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt)));
+
+    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, var(--normal-bg-colour) 100%) !important;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+> * {
+      filter: drop-shadow(0 0 10px var(--normal-bg-colour));
+    }
+}
+#vc-spotify-player:hover {
+    --blur-amount: 0px;
+}
+#vc-spotify-player::before,
+#vc-spotify-player::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease-out;
+}
+#vc-spotify-player::before {
+    background: var(--vc-spotify-track-image);
+    background-position: center top; 
+    background-size: cover; 
+    opacity: 0.5;
+}
+#vc-spotify-player:hover::before {
+    opacity: 0.7;
+}
+#vc-spotify-player::after {
+    backdrop-filter: blur(var(--blur-amount));
+}
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"] {
+    background-color: white !important;
+    background: var(--vc-spotify-track-image);
+    background-size: 1px 100%;
+}
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"]::before {
+    content: "";
+    position: fixed;
+    height: inherit;
+    width: inherit;
+    top: inherit;
+    left: inherit;
+    border-radius: 4px 0 0 4px;
+    backdrop-filter: blur(10px) saturate(4) brightness(1.6);
+}
+#vc-spotify-player, .vc-spotify-lyrics {
+  border-bottom: unset;
+}
+
+/* span[data-text="GalexY"], div[class*="title_b6c092"]:not([class*="gameName"]) {
+  background: linear-gradient(90deg, #0abfff, #8e44ad,#8e44ad, #0abfff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* animation: gradientShift 14s ease-in-out infinite; 
+  font-weight: bold;
+  text-shadow:0px 0px 3px rgba(210, 104, 255, 0.255),0px 0px 3px hwb(250 29% 17% / 0.451);
+} */
+
+span[data-text="Carmen"] {
+  background: linear-gradient(90deg, #d5548c,#70ff9d, #d554ca);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* animation: gradientShift 22s ease-in-out infinite; */
+  font-weight: bold;
+  text-shadow:0px 0px 3px rgba(210, 104, 255, 0.255),0px 0px 3px hwb(250 29% 17% / 0.451);
+}
+
+@keyframes gradientShift {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
+}
+ 
+.container__37e49 {
+  background: linear-gradient(90deg, #66317c, #005b7c,#005b7c, #66317c);
+  background-size: 400% 400%;
+  text-shadow:0px 0px 3px rgba(210, 104, 255, 0.255),0px 0px 3px hwb(250 29% 17% / 0.451);
+  /* animation: gradientShift 14s ease-in-out infinite; */
+}
+
+
+img[src*="avatars/387761235656966145"] {
+  content: url('https://media.tenor.com/ktCzcJ85hL0AAAAe/scared-shaking.png');
+}
